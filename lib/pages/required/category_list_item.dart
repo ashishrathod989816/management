@@ -6,8 +6,7 @@ class CategoryListItem extends StatefulWidget {
   final int availability;
 
   @required
-  CategoryListItem(
-      {this.categoryIcon, this.categoryName, this.availability});
+  CategoryListItem({this.categoryIcon, this.categoryName, this.availability});
 
   @override
   _CategoryListItemState createState() => _CategoryListItemState();
@@ -17,17 +16,15 @@ class _CategoryListItemState extends State<CategoryListItem> {
   var select = false;
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      padding: EdgeInsets.all(0),
-      child: Card(
+    return InkWell(
       
+      child: Card(
         color: select == true ? Colors.purple : null,
         elevation: 5,
         shape: StadiumBorder(
             // borderRadius: BorderRadius.circular(10.0),
             ),
         child: Column(
-          
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             CircleAvatar(
@@ -44,14 +41,24 @@ class _CategoryListItemState extends State<CategoryListItem> {
           ],
         ),
       ),
-      onPressed: () {
+      onTap: () {
         setState(() {
-          if(select==false)
-          select = true;
+          if (select == false)
+            select = true;
           else
-          select=false;
+            select = false;
         });
+        
       },
+  //     onTapCancel: (){
+  // setState(() {
+  //         if (select == false)
+  //           select = true;
+  //         else
+  //           select = false;
+  //       });
+
+  //     },
     );
   }
 }

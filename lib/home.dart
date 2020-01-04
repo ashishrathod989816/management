@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:management/strings.dart';
 
 import 'package:management/tabs.dart';
 
@@ -18,19 +19,12 @@ class _HomeState extends State<Home> {
   ];
   String _selectedlocation = 'choose';
 
-  String _radioValue; //Initial definition of radio button value
-  String choice;
-  @override
-  void initState() {
-    setState(() {
-      _radioValue = "one";
-    });
-    super.initState();
-  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor:background,
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

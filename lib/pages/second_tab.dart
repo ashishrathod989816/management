@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:management/main_list.dart';
 import 'package:management/pages/required/category_list_item.dart';
+import 'package:management/strings.dart';
 
 class SecondTab extends StatefulWidget {
   @override
@@ -13,10 +14,11 @@ class _SecondTabState extends State<SecondTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: background,
         body: Column(children: <Widget>[
       Flexible(flex: 2, child: categories(context)),
       Flexible(
-        flex: 7,
+        flex: 9,
         child: BuildMainList(),
       )
     ]));
@@ -24,7 +26,10 @@ class _SecondTabState extends State<SecondTab> {
 
   Widget categories(BuildContext context) {
     return Container(
+
+      padding: EdgeInsets.all(0),
       child: ListView(
+        
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         children: <Widget>[
@@ -37,25 +42,20 @@ class _SecondTabState extends State<SecondTab> {
 
            CategoryListItem(
             categoryIcon: Icons.restaurant,
-            categoryName: "Burgers",
+            categoryName: "Restaurant",
             availability: 12,
 
           ),
            CategoryListItem(
             categoryIcon: Icons.hotel,
-            categoryName: "Burgers",
+            categoryName: "hotel",
             availability: 12,
 
           ),
-           CategoryListItem(
-            categoryIcon: Icons.bug_report,
-            categoryName: "Burgers",
-            availability: 12,
-     
-          ),
+          
            CategoryListItem(
             categoryIcon: Icons.fastfood,
-            categoryName: "Burgers",
+            categoryName: "fastfood",
             availability: 12,
            
           ),
@@ -68,26 +68,17 @@ class _SecondTabState extends State<SecondTab> {
           ),
            CategoryListItem(
             categoryIcon: Icons.hotel,
-            categoryName: "Burgers",
+            categoryName: "hotel",
             availability: 12,
 
           ),
-           CategoryListItem(
-            categoryIcon: Icons.bug_report,
-            categoryName: "Burgers",
-            availability: 12,
           
-          ),
-        Checkbox(
-          activeColor:Colors.transparent,
-          value: select,
-          onChanged: (val){
-            setState(() {
-              select=val;
-            });
+         CategoryListItem(
+            categoryIcon: Icons.hotel,
+            categoryName: "hotel",
+            availability: 12,
 
-          },
-        )
+          ),
        
         ],
       ),
